@@ -1,0 +1,28 @@
+[user]
+	name = Richard J Talbot
+	email = RTALBOT@progressive.com
+[http]
+	sslVerify = false
+[https]
+	sslVerify = false
+[core]
+	symlinks = true
+	autocrlf = input
+	quotepath = false
+[credential "https://github.com"]
+	username = A022495
+[credential]
+	helper = cache --timeout=1000000
+[alias]
+	co = checkout
+	br = branch
+	unstage = reset HEAD --
+	ci = commit
+	cm = commit -m
+	stat = status
+	lst = log -1 HEAD
+	snatch = !git fetch --prune && git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -D
+	nah = !git reset --hard && git clean -df
+	amend = commit --amend --no-edit
+	update = pull --rebase origin develop
+	root = rev-parse --show-toplevel
