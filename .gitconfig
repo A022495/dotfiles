@@ -1,18 +1,15 @@
 [user]
-	name = Richard J Talbot
-	email = RTALBOT@progressive.com
+	name = A022495
+	email = A022495@progressive.com
 [http]
-	sslVerify = false
+	sslVerify = true
+	sslCAInfo = /Users/a022495/.cert/PGR.crt
 [https]
-	sslVerify = false
+	sslVerify = true
 [core]
 	symlinks = true
 	autocrlf = input
 	quotepath = false
-[credential "https://github.com"]
-	username = A022495
-[credential]
-	helper = cache --timeout=1000000
 [alias]
 	co = checkout
 	br = branch
@@ -26,3 +23,11 @@
 	amend = commit --amend --no-edit
 	update = pull --rebase origin develop
 	root = rev-parse --show-toplevel
+[pack]
+	windowMemory = 100m
+	packSizeLimit = 100m
+	threads = 1
+[credential "https://github.com"]
+	username = A022495
+[credential]
+	helper = cache --timeout=86400
